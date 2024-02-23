@@ -1,0 +1,21 @@
+#image-container {
+  width: 400px; /* Example size, adjust based on actual image size */
+  height: 400px;
+  position: relative;
+}
+.quadrant {
+  width: 50%; /* Adjust based on the size of the container */
+  height: 50%;
+  float: left;
+  background-size: 200% 200%; /* Enlarge the background image to cover the full quadrant area */
+  transition: background-image 0.5s ease-in-out; /* Smooth transition for the background image change */
+}
+#A1, #A2, #B1, #B2 {
+  background-image: url('path_to_your_large_image'); /* The initial large image displayed as background */
+}
+/* Adjust the background-position for each quadrant to align properly */
+#A1 { background-position: top left; }
+#A2 { background-position: top right; }
+#B1 { background-position: bottom left; }
+#B2 { background-position: bottom right; }
+Ima
