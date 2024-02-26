@@ -6,16 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // List of quadrants and their enlarged images
   const quadrants = [
-    { id: 'A1', imageUrl: 'path_to_enlarged_image_A1' },
-    { id: 'A2', imageUrl: 'path_to_enlarged_image_A2' },
-    { id: 'B1', imageUrl: 'path_to_enlarged_image_B1' },
-    { id: 'B2', imageUrl: 'path_to_enlarged_image_B2' },
+    { id: 'A1', imageUrl: 'images/A1.png' },
+    { id: 'A2', imageUrl: 'images/A2.png' },
+    { id: 'B1', imageUrl: 'images/B1.png' },
+    { id: 'B2', imageUrl: 'images/B2.png' },
   ];
 
   // Set event listeners for each quadrant
   quadrants.forEach(quadrant => {
     const element = document.getElementById(quadrant.id);
     element.addEventListener('mouseover', () => setEnlargedBackground(quadrant.id, quadrant.imageUrl));
-    element.addEventListener('mouseout', () => setEnlargedBackground(quadrant.id, 'path_to_your_large_image')); // Reset to the initial large image
+    element.addEventListener('mouseout', () => setEnlargedBackground(quadrant.id, 'images/background.png')); // Reset to the initial large image
   });
 });
