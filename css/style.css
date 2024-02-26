@@ -11,6 +11,8 @@ body, html {
   width: 100%; /* Adjust based on your actual image size */
   height: 100%; /* Adjust based on your actual image size */
   position: relative;
+  background-image: url('images/background.jpg');
+  background-size: cover; /* Cover the entire area of the container */
 }
 
 .quadrant {
