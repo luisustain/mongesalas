@@ -3,30 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadrant Interactive Image</title>
+    <title>Interactive Quadrants</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="image-container">
-    <div class="quadrant" id="A1">
-        <a href="images/A1.jpg" target="_blank">
-            <img src="images/A1.jpg" alt="A1 Image">
-        </a>
-    </div>
-    <div class="quadrant" id="A2">
-        <a href="images/A2.jpg" target="_blank">
-            <img src="images/A2.jpg" alt="A2 Image">
-        </a>
-    </div>
-    <div class="quadrant" id="B1">
-        <a href="images/B1.jpg" target="_blank">
-            <img src="images/B1.jpg" alt="B1 Image">
-        </a>
-    </div>
-    <div class="quadrant" id="B2">
-        <a href="images/B2.jpg" target="_blank">
-            <img src="images/B2.jpg" alt="B2 Image">
-        </a>
-    </div>
+<div id="image-container" style="background-image: url('images/background.jpg');">
+    <div class="quadrant" id="A1" data-story-url="A1story.html"></div>
+    <div class="quadrant" id="A2" data-story-url="A2story.html"></div>
+    <div class="quadrant" id="B1" data-story-url="B1story.html"></div>
+    <div class="quadrant" id="B2" data-story-url="B2story.html"></div>
+    <img id="enlarged-image" src="" alt="Enlarged Quadrant" style="display:none;">
 </div>
-<sc
+<script src="script.js"></script>
+</body>
+</html>
