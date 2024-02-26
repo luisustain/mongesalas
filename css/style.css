@@ -1,21 +1,34 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #image-container {
-  width: 1170px; /* Example size, adjust based on actual image size */
-  height: 510px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; /* Adjust based on your actual image size */
+  height: 100%; /* Adjust based on your actual image size */
   position: relative;
 }
+
 .quadrant {
-  width: 50%; /* Adjust based on the size of the container */
+  width: 50%;
   height: 50%;
-  float: left;
-  background-size: 200% 200%; /* Enlarge the background image to cover the full quadrant area */
-  transition: background-image 0.5s ease-in-out; /* Smooth transition for the background image change */
+  overflow: hidden;
+  position: relative;
 }
-#A1, #A2, #B1, #B2 {
-  background-image: url('images/background.jpg'); /* The initial large image displayed as background */
+
+.quadrant img {
+  display: none; /* Hide the image by default */
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-/* Adjust the background-position for each quadrant to align properly */
-#A1 { background-position: top left; }
-#A2 { background-position: top right; }
-#B1 { background-position: bottom left; }
-#B2 { background-position: bottom right; }
-Ima
+
+.quadrant:hover img {
+  display: block; /* Show the image on hover */
+}
