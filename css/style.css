@@ -11,7 +11,7 @@
   transition: background-image 0.5s ease-in-out; /* Smooth transition for the background image change */
 }
 #A1, #A2, #B1, #B2 {
-  background-image: url('images/background.png'); /* The initial large image displayed as background */
+  background-image: url('images/background.jpeg'); /* The initial large image displayed as background */
 }
 /* Adjust the background-position for each quadrant to align properly */
 #A1 { background-position: top left; }
