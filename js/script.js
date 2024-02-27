@@ -2,20 +2,24 @@ document.addEventListener('DOMContentLoaded', function() {
   const quadrants = document.querySelectorAll('.quadrant');
   const enlargedImage = document.getElementById('enlarged-image');
 
+  // Ensure the enlarged image is initially hidden and not interfering.
+  enlargedImage.style.display = 'none';
+
   quadrants.forEach(quadrant => {
     quadrant.addEventListener('mouseover', function() {
-      const imageSrc = `images/${this.id}.jpg`; // Image corresponds to quadrant ID
-      const storyUrl = this.getAttribute('data-story-url'); // URL for redirection
+      const imageSrc = `images/${this.id}.jpg`;
       enlargedImage.src = imageSrc;
-      enlargedImage.style.display = 'block';
-      // Set the story URL as a direct attribute for easy access on click
-      enlargedImage.setAttribute('data-story-url', storyUrl);
+      enlargedImage.style.display = 'block'; // Show the image.
     });
-  });
 
-  // Handle clicks on the enlarged image to navigate to the story URL
-  enlargedImage.addEventListener('click', function() {
-    const storyUrl = this.getAttribute('data-story-url');
-    window.location.href = storyUrl;
+    quadrant.addEventListener('mouseout', function() {
+      enlargedImage.style.display = 'none'; // Optionally hide on mouse out.
+    });
+
+    // Assuming the click event is attached to the enlarged image.
+    enlargedImage.addEventListener('click', function() {
+      const storyUrl = this.getAttribute('data-story-url');
+      if (storyUrl) window.location.href = storyUrl;
+    });
   });
 });
