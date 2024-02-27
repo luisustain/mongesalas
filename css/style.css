@@ -6,15 +6,9 @@ body, html {
 
 #image-container {
   width: 100%;
-  height: 100vh; /* Use viewport height to ensure full screen coverage */
-  background-image: url('images/background.jpg');
-  background-size: cover; /* Cover the entire area; adjust as needed */
-  background-position: center; /* Center the background */
-  background-repeat: no-repeat; /* Do not repeat the image */
-}
-
-.quadrant {
-  width: 50%;
-  height: 50%;
-  float: left; /* Simplified layout */
+  height: 100vh;
+  background-image: url('../images/background.jpg'); // Note the path
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
