@@ -4,20 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   quadrants.forEach(quadrant => {
     quadrant.addEventListener('mouseover', function() {
-      const imageSrc = `images/${this.id}.jpg`; // Matches the quadrant's ID to an image
-      enlargedImage.src = imageSrc;
+      const imageUrl = this.getAttribute('data-image-url');
+      enlargedImage.src = imageUrl;
       enlargedImage.style.display = 'block';
+      // Set the story URL for the click event
       enlargedImage.setAttribute('data-story-url', this.getAttribute('data-story-url'));
+    });
+
+    quadrant.addEventListener('mouseout', function() {
+      enlargedImage.style.display = 'none';
     });
   });
 
   enlargedImage.addEventListener('click', function() {
-    window.location.href = this.getAttribute('data-story-url');
+    const storyUrl = this.getAttribute('data-story-url');
+    window.location.href = storyUrl;
   });
-
-  document.addEventListener('mouseout', function(e) {
-    if (e.target === enlargedImage) {
-      enlargedImage.style.display = 'none';
-    }
-  }, true);
 });
