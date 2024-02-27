@@ -2,24 +2,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const quadrants = document.querySelectorAll('.quadrant');
   const enlargedImage = document.getElementById('enlarged-image');
 
-  // Ensure the enlarged image is initially hidden and not interfering.
-  enlargedImage.style.display = 'none';
-
   quadrants.forEach(quadrant => {
     quadrant.addEventListener('mouseover', function() {
-      const imageSrc = `images/${this.id}.jpg`;
+      const imageSrc = `images/${this.id}.jpg`; // Matches the quadrant's ID to an image
       enlargedImage.src = imageSrc;
-      enlargedImage.style.display = 'block'; // Show the image.
-    });
-
-    quadrant.addEventListener('mouseout', function() {
-      enlargedImage.style.display = 'none'; // Optionally hide on mouse out.
-    });
-
-    // Assuming the click event is attached to the enlarged image.
-    enlargedImage.addEventListener('click', function() {
-      const storyUrl = this.getAttribute('data-story-url');
-      if (storyUrl) window.location.href = storyUrl;
+      enlargedImage.style.display = 'block';
+      enlargedImage.setAttribute('data-story-url', this.getAttribute('data-story-url'));
     });
   });
+
+  enlargedImage.addEventListener('click', function() {
+    window.location.href = this.getAttribute('data-story-url');
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    if (e.target === enlargedImage) {
+      enlargedImage.style.display = 'none';
+    }
+  }, true);
 });
