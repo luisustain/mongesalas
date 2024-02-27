@@ -1,38 +1,20 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 #image-container {
-  position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh; /* Use viewport height to ensure full screen coverage */
   background-image: url('images/background.jpg');
-  background-size: 100% auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-wrap: wrap;
+  background-size: cover; /* Cover the entire area; adjust as needed */
+  background-position: center; /* Center the background */
+  background-repeat: no-repeat; /* Do not repeat the image */
 }
 
 .quadrant {
   width: 50%;
   height: 50%;
-  cursor: pointer;
-}
-
-#enlarged-image {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-  z-index: 10;
-  cursor: pointer;
+  float: left; /* Simplified layout */
 }
