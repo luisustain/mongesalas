@@ -9,19 +9,21 @@ body, html {
 #image-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Adjust the height to viewport height to ensure full coverage vertically */
-  background-image: url('images/background.jpg'); /* Ensure your path is correct */
+  min-height: 100vh; /* Use min-height to ensure it covers at least the viewport height */
+  background-image: url('images/background.jpg');
   background-size: 100% auto; /* Cover the width fully, adjust height automatically */
-  background-position: center; /* Center the background image */
+  background-position: center center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
 }
 
 .quadrant {
   width: 50%;
   height: 50%;
   cursor: pointer;
-  position: relative; /* Ensure positioning context for children */
 }
 
 #enlarged-image {
